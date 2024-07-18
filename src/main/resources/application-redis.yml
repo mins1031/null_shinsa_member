@@ -6,4 +6,12 @@ spring:
     redis:
       host: localhost
       port: 6379
-      connect-timeout: 30s
+      connect-timeout: 30
+  server:
+    servlet:
+      session:
+        cookie:
+          secure: true
+          same-site: none
+          http-only: true
+          name: JSESSIONID
