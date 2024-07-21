@@ -1,4 +1,4 @@
-package com.example.nullshinsamember.user.utils;
+package com.example.nullshinsamember.utils;
 
 public class UserUtils {
 

@@ -1,9 +1,8 @@
-package com.example.nullshinsamember.user.application;
+package com.example.nullshinsamember.application;
 
-import com.example.nullshinsamember.common.constant.UserConst;
+import com.example.nullshinsamember.infrastructure.repository.UserRepository;
 import com.example.nullshinsamember.user.domain.entity.User;
-import com.example.nullshinsamember.user.infrastructure.repository.UserRepository;
-import com.example.nullshinsamember.user.utils.UserUtils;
+import com.example.nullshinsamember.utils.UserUtils;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -15,7 +14,6 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.atLeastOnce;
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 

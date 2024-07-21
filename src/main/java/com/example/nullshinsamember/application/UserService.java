@@ -1,10 +1,10 @@
-package com.example.nullshinsamember.user.application;
+package com.example.nullshinsamember.application;
 
-import com.example.nullshinsamember.user.domain.entity.User;
-import com.example.nullshinsamember.user.exception.UserException;
-import com.example.nullshinsamember.user.exception.UserExceptionCode;
-import com.example.nullshinsamember.user.infrastructure.repository.UserRepository;
-import com.example.nullshinsamember.user.utils.UserUtils;
+import com.example.nullshinsamember.domain.entity.User;
+import com.example.nullshinsamember.exception.UserException;
+import com.example.nullshinsamember.exception.UserExceptionCode;
+import com.example.nullshinsamember.infrastructure.repository.UserRepository;
+import com.example.nullshinsamember.utils.UserUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;

@@ -1,6 +1,6 @@
-package com.example.nullshinsamember.user.infrastructure.repository;
+package com.example.nullshinsamember.infrastructure.repository;
 
-import com.example.nullshinsamember.user.domain.entity.User;
+import com.example.nullshinsamember.domain.entity.User;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

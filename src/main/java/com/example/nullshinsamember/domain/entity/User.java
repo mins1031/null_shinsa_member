@@ -1,4 +1,4 @@
-package com.example.nullshinsamember.user.domain.entity;
+package com.example.nullshinsamember.domain.entity;
 
 import com.example.nullshinsamember.common.domain.BaseEntity;
 import jakarta.persistence.Column;

@@ -1,10 +1,10 @@
-package com.example.nullshinsamember.user.presentation;
+package com.example.nullshinsamember.presentation;
 
+import com.example.nullshinsamember.application.UserService;
 import com.example.nullshinsamember.common.constant.UserConst;
-import com.example.nullshinsamember.user.application.UserService;
-import com.example.nullshinsamember.user.presentation.dto.request.UserSignInRequest;
-import com.example.nullshinsamember.user.presentation.dto.request.UserSignUpRequest;
-import com.example.nullshinsamember.user.presentation.dto.response.UserSignInResponse;
+import com.example.nullshinsamember.presentation.dto.request.UserSignInRequest;
+import com.example.nullshinsamember.presentation.dto.request.UserSignUpRequest;
+import com.example.nullshinsamember.presentation.dto.response.UserSignInResponse;
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

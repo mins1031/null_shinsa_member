@@ -1,4 +1,4 @@
-package com.example.nullshinsamember.user.exception;
+package com.example.nullshinsamember.exception;
 
 import lombok.Getter;
 import org.springframework.http.HttpStatus;
