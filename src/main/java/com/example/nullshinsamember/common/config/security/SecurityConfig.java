@@ -33,7 +33,8 @@ public class SecurityConfig {
                         authorizeRequests
                                 .requestMatchers(
                                         "/hello",
-                                        "/"
+                                        "/sign-up",
+                                        "/sign-in"
                                 )
                                 .permitAll()
                 )

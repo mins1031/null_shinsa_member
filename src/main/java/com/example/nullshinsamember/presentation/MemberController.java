@@ -21,13 +21,13 @@ public class MemberController {
     // 로그인
     @PostMapping("/sign-up")
     public void signUp(@Valid @RequestBody MemberSignUpRequest request){
-        memberService.signUp(request.getEmail(), request.getPassword(), request.getName());
+        memberService.signUp(request.email(), request.password(), request.name());
     }
 
     // 회원가입
     @PostMapping("/sign-in")
     public MemberSignInResponse signIn(@Valid @RequestBody MemberSignInRequest request, HttpSession httpSession){
-        String sessionId = memberService.signIn(request.getEmail(), request.getPassword());
+        String sessionId = memberService.signIn(request.email(), request.password());
         httpSession.setAttribute(MemberConst.MEMBER_SESSION_ID_KEY, sessionId);
         return new MemberSignInResponse(httpSession.getId());
     }
