@@ -1,6 +1,6 @@
 package com.example.nullshinsamember.common.exception;
 
-import com.example.nullshinsamember.user.domain.dto.response.ExceptionResponse;
+import com.example.nullshinsamember.user.presentation.dto.response.ExceptionResponse;
 import com.example.nullshinsamember.user.exception.UserException;
 import com.example.nullshinsamember.user.exception.UserExceptionCode;
 import jakarta.servlet.http.HttpServletRequest;

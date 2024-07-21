@@ -2,12 +2,13 @@ package com.example.nullshinsamember.user.presentation;
 
 import com.example.nullshinsamember.common.constant.UserConst;
 import com.example.nullshinsamember.user.application.UserService;
-import com.example.nullshinsamember.user.domain.dto.request.UserSignInRequest;
-import com.example.nullshinsamember.user.domain.dto.request.UserSignUpRequest;
-import com.example.nullshinsamember.user.domain.dto.response.UserSignInResponse;
+import com.example.nullshinsamember.user.presentation.dto.request.UserSignInRequest;
+import com.example.nullshinsamember.user.presentation.dto.request.UserSignUpRequest;
+import com.example.nullshinsamember.user.presentation.dto.response.UserSignInResponse;
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,5 +28,10 @@ public class UserController {
         String sessionId = userService.signIn(request.getEmail(), request.getPassword());
         httpSession.setAttribute(UserConst.USER_SESSION_ID_KEY, sessionId);
         return new UserSignInResponse(httpSession.getId());
+    }
+
+    @GetMapping("/hello")
+    public String test(){
+        return "Hello";
     }
 }

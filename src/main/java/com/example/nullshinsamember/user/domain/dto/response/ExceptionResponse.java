@@ -1,4 +1,4 @@
-package com.example.nullshinsamember.user.domain.dto.response;
+package com.example.nullshinsamember.user.presentation.dto.response;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

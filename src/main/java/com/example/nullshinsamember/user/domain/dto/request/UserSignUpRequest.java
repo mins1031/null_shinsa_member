@@ -1,4 +1,4 @@
-package com.example.nullshinsamember.user.domain.dto.request;
+package com.example.nullshinsamember.user.presentation.dto.request;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.AccessLevel;
