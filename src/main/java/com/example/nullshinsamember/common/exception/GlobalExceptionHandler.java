@@ -1,8 +1,8 @@
 package com.example.nullshinsamember.common.exception;
 
-import com.example.nullshinsamember.user.presentation.dto.response.ExceptionResponse;
-import com.example.nullshinsamember.user.exception.UserException;
-import com.example.nullshinsamember.user.exception.UserExceptionCode;
+import com.example.nullshinsamember.presentation.dto.response.ExceptionResponse;
+import com.example.nullshinsamember.exception.UserException;
+import com.example.nullshinsamember.exception.UserExceptionCode;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
