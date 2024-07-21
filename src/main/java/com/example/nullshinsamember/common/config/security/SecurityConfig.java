@@ -1,12 +1,13 @@
-package com.example.nullshinsamember.common.config;
+package com.example.nullshinsamember.common.config.security;
 
-import com.example.nullshinsamember.common.config.security.CustomAccessDeniedHandler;
-import com.example.nullshinsamember.common.config.security.CustomUnAuthorizationFilter;
+import com.example.nullshinsamember.application.SecurityUserDetailService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
@@ -15,7 +16,12 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfig {
     private final CustomUnAuthorizationFilter unauthorizedEntryPoint;
     private final CustomAccessDeniedHandler accessDeniedHandler;
+    private final SecurityUserDetailService securityUserDetailService;
 
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
 
     @Bean
     public SecurityFilterChain securityFilterChain (HttpSecurity httpSecurity) throws Exception {
@@ -25,7 +31,11 @@ public class SecurityConfig {
 //                )
                 .authorizeHttpRequests((authorizeRequests) ->
                         authorizeRequests
-                                .requestMatchers("/hello").permitAll()
+                                .requestMatchers(
+                                        "/hello",
+                                        "/"
+                                )
+                                .permitAll()
                 )
                 .formLogin((formLogin) ->
                         formLogin
@@ -40,6 +50,7 @@ public class SecurityConfig {
                                 .authenticationEntryPoint(unauthorizedEntryPoint)
                                 .accessDeniedHandler(accessDeniedHandler)
                 )
+                .userDetailsService(securityUserDetailService)
                 ;
 
         return httpSecurity.build();

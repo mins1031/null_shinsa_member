@@ -1,8 +1,8 @@
 package com.example.nullshinsamember.common.exception;
 
 import com.example.nullshinsamember.presentation.dto.response.ExceptionResponse;
-import com.example.nullshinsamember.exception.UserException;
-import com.example.nullshinsamember.exception.UserExceptionCode;
+import com.example.nullshinsamember.exception.MemberException;
+import com.example.nullshinsamember.exception.MemberExceptionCode;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -14,11 +14,11 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler(UserException.class)
-    public ResponseEntity<ExceptionResponse> handlerUserException(final UserException ex, final HttpServletRequest req) {
-        UserExceptionCode code = ex.getUserExceptionCode();
+    @ExceptionHandler(MemberException.class)
+    public ResponseEntity<ExceptionResponse> handlerMemberException(final MemberException ex, final HttpServletRequest req) {
+        MemberExceptionCode code = ex.getMemberExceptionCode();
 
-        log.info("====  UserException ==== PATH: {}, HTTP_METHOD: {}, ERROR_MESSAGE: {}, HTTP_STATUS: {}",
+        log.info("====  MemberException ==== PATH: {}, HTTP_METHOD: {}, ERROR_MESSAGE: {}, HTTP_STATUS: {}",
                 req.getRequestURI(), req.getMethod(), code.getErrorMessage(), code.getHttpStatus().toString());
 
         return ResponseEntity.status(code.getHttpStatus()).body(new ExceptionResponse(code.getErrorCode(), code.getErrorMessage()));
